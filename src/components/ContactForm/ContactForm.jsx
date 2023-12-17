@@ -18,7 +18,8 @@ export default function ContactForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault('handleSubmit', e);
+    console.log('dfdfdfdf');
     if (!name && !number) {
       return;
     }

@@ -8,12 +8,18 @@ import HomePage from './pages/HomePage';
 import RegisterPage from './pages/RegisterPage';
 import LoginPage from './pages/LoginPage';
 import PhoneBookPage from './pages/PhoneBookPage';
+import { useAuth } from './hooks';
+import { refreshUser } from '../redux/auth/operations';
 
 export default function App() {
   const dispatch = useDispatch();
+  const { isRefresing } = useAuth();
+
+  console.log('start');
+  // console.log(isRefresing);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
 
   return (
