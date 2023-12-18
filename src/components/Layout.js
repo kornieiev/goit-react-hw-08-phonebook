@@ -1,30 +1,16 @@
-import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { AppBar } from './AppBar/AppBar';
 
 export default function Layout() {
   return (
     <>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <NavLink to="/">HomePage</NavLink>
-            </li>
-            <li>
-              <NavLink to="/register">RegisterPage</NavLink>
-            </li>
-            <li>
-              <NavLink to="/login">LoginPage</NavLink>
-            </li>
-            <li>
-              <NavLink to="/contacts">PhoneBook</NavLink>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main>
+      <AppBar />
+      <Suspense fallback={null}>
         <Outlet />
-      </main>
+      </Suspense>
+      <Toaster position="top-right" reverseOrder={false} />
     </>
   );
 }

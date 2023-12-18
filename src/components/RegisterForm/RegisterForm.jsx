@@ -1,7 +1,8 @@
-import { Field, Formik, Form } from 'formik';
+import { Field, Formik } from 'formik';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations';
+import { RegistrFormBlock } from './RegistrForm.styled';
 
 export default function RegisterForm() {
   const dispatch = useDispatch();
@@ -17,7 +18,6 @@ export default function RegisterForm() {
   };
   return (
     <>
-      <h2>RegisterForm:</h2>
       <Formik
         initialValues={{
           userName: 'JohnJohn',
@@ -26,7 +26,7 @@ export default function RegisterForm() {
         }}
         onSubmit={handleSubmit}
       >
-        <Form>
+        <RegistrFormBlock>
           <label htmlFor="userName">User Name:</label>
           <Field id="userName" name="userName" placeholder="John" />
           <br />
@@ -43,7 +43,7 @@ export default function RegisterForm() {
           />
           <br />
           <button type="submit">Register</button>
-        </Form>
+        </RegistrFormBlock>
       </Formik>
     </>
   );

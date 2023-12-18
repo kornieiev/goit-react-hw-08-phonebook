@@ -4,15 +4,14 @@ import Filter from 'components/Filter/Filter';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectContacts } from '../../redux/selectors';
+import { PagesBlock, PagesHeader, PagesParagraph } from './pages.styled';
 
 export default function PhoneBookPage() {
   const contacts = useSelector(selectContacts);
 
   return (
-    <>
-      <h1>Wellcome to PhoneBookPage</h1>
-
-      <h1>Phonebook</h1>
+    <PagesBlock>
+      <PagesHeader>Hi! Wellcome to your personal phone book!</PagesHeader>
       <ContactForm />
       {contacts.contacts.length > 0 ? (
         <div>
@@ -23,8 +22,8 @@ export default function PhoneBookPage() {
           <ContactList />
         </div>
       ) : (
-        <p>You haven't any contact</p>
+        <PagesParagraph>You don't have any contacts yet.</PagesParagraph>
       )}
-    </>
+    </PagesBlock>
   );
 }

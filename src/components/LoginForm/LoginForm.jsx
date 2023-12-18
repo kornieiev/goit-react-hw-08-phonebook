@@ -2,6 +2,7 @@ import { Field, Form, Formik } from 'formik';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/operations';
+import { LoginFormBlock } from './LoginForm.styled';
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -16,7 +17,6 @@ export default function LoginForm() {
   };
   return (
     <>
-      <h2>LoginForm:</h2>
       <Formik
         initialValues={{
           email: 'jane@acme.com',
@@ -24,7 +24,7 @@ export default function LoginForm() {
         }}
         onSubmit={handleSubmit}
       >
-        <Form>
+        <LoginFormBlock>
           <label htmlFor="email">Email:</label>
           <Field id="email" name="email" placeholder="jane@acme.com" />
           <br />
@@ -38,7 +38,7 @@ export default function LoginForm() {
           />
           <br />
           <button type="submit">Submit</button>
-        </Form>
+        </LoginFormBlock>
       </Formik>
     </>
   );

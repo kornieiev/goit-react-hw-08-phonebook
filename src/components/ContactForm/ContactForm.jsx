@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { nanoid } from 'nanoid';
 import {
   PhonebookWrap,
   FormButton,
@@ -19,11 +18,10 @@ export default function ContactForm() {
 
   const handleSubmit = e => {
     e.preventDefault('handleSubmit', e);
-    console.log('dfdfdfdf');
     if (!name && !number) {
       return;
     }
-    addNewContact({ id: nanoid(), name, number });
+    addNewContact({ name, number });
     setName('');
     setNumber('');
   };

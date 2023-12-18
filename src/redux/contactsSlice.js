@@ -43,8 +43,6 @@ export const contactsSlice = createSlice({
       .addCase(deleteContact.rejected, handleRejected)
       .addCase(addContact.pending, handlePending)
       .addCase(addContact.fulfilled, (state, action) => {
-        console.log('addContact-state', state);
-        console.log('addContact-action', action);
         state.isLoading = false;
         state.error = null;
         state.contacts.push(action.payload);
