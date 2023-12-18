@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ListItem, DeleteButton, EditButton } from './ContactList.styled';
 import EditForm from 'components/EditForm/EditForm';
-import { selectContacts, selectFilteredContacts } from '../../redux/selectors';
+import { selectFilteredContacts } from '../../redux/selectors';
 import { deleteContact } from '../../redux/operations';
 
 export default function ContactList() {
   const contacts = useSelector(selectFilteredContacts);
-  // const contacts = useSelector(selectContacts);
-  console.log(contacts);
 
   const dispatch = useDispatch();
 
