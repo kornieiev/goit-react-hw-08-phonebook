@@ -6,6 +6,6 @@ export const Header = styled.div`
   padding-left: 0px;
   padding-right: 20px;
   padding-bottom: 8px;
-  background-color: rgb(53, 168, 225);
+  background-color: #28aee6;
   border-bottom: 1px solid grey;
 `;
