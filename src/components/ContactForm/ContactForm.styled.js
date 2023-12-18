@@ -16,7 +16,7 @@ export const FormButton = styled.button`
   margin-left: auto;
   margin-right: auto;
   &:hover {
-    background-color: #55e65c;
+    background-color: #e1e1df;
   }
 `;
 
