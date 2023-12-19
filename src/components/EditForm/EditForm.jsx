@@ -5,11 +5,13 @@ import {
   ListItemChanged,
   InputChange,
   DivChangeWrap,
+  EditFormButtonsDiv,
+  EditFormForm,
 } from './EditForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { editContact, fetchContacts } from '../../redux/operations';
+import { editContact, fetchContacts } from '../../redux/contacts/operations';
 import { useEffect } from 'react';
-import { selectContacts } from '../../redux/selectors';
+import { selectContacts } from '../../redux/contacts/selectors';
 
 export default function EditForm(props) {
   const contacts = useSelector(selectContacts);
@@ -60,23 +62,23 @@ export default function EditForm(props) {
   };
 
   return (
-    <ListItemChanged>
+    <div>
       <DivChangeWrap>
-        <form>
+        <EditFormForm>
           <InputChange
             type="text"
             value={editName}
             name="name"
             onChange={handleChange}
           />
-          <input
+          <InputChange
             type="text"
             value={editNumber}
             name="number"
             onChange={handleChange}
           />
-        </form>
-        <div>
+        </EditFormForm>
+        <EditFormButtonsDiv>
           <SaveButton
             value={props.item.id}
             type="button"
@@ -91,8 +93,8 @@ export default function EditForm(props) {
           >
             Cancel
           </CancelButton>
-        </div>
+        </EditFormButtonsDiv>
       </DivChangeWrap>
-    </ListItemChanged>
+    </div>
   );
 }

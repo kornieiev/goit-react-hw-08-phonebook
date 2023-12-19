@@ -6,8 +6,8 @@ import {
   FormLabel,
 } from './ContactForm.styled';
 import { useState } from 'react';
-import { addContact } from '../../redux/operations';
-import { selectContacts } from '../../redux/selectors';
+import { addContact } from '../../redux/contacts/operations';
+import { selectContacts } from '../../redux/contacts/selectors';
 
 export default function ContactForm() {
   const contacts = useSelector(selectContacts);
@@ -55,7 +55,7 @@ export default function ContactForm() {
   return (
     <div>
       <PhonebookWrap onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
+        <FormLabel htmlFor="name">Name:</FormLabel>
         <FormInput
           id="name"
           type="text"
@@ -66,7 +66,7 @@ export default function ContactForm() {
           value={name}
           onChange={handleInputChange}
         />
-        <FormLabel htmlFor="number">Number</FormLabel>
+        <FormLabel htmlFor="number">Number:</FormLabel>
         <FormInput
           id="number"
           type="tel"
@@ -78,7 +78,7 @@ export default function ContactForm() {
           onChange={handleInputChange}
         />
         <br />
-        <FormButton type="submit">Add contact</FormButton>
+        <FormButton type="submit">Add new contact</FormButton>
       </PhonebookWrap>
     </div>
   );

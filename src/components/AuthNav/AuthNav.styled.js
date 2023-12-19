@@ -15,6 +15,7 @@ export const AuthNavLink = styled(NavLink)`
     color: yellow;
   }
   &.active {
-    color: darkred;
+    color: yellow;
+    font-weight: 600;
   }
 `;

@@ -1,13 +1,24 @@
 import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectContacts } from '../../redux/selectors';
-import { PagesBlock, PagesHeader, PagesParagraph } from './pages.styled';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectContacts } from '../redux/contacts/selectors';
+import {
+  PagesBlock,
+  PagesH2,
+  PagesHeader,
+  PagesParagraph,
+} from './pages.styled';
+import { fetchContacts } from '../redux/contacts/operations';
 
 export default function PhoneBookPage() {
   const contacts = useSelector(selectContacts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <PagesBlock>
@@ -15,7 +26,7 @@ export default function PhoneBookPage() {
       <ContactForm />
       {contacts.contacts.length > 0 ? (
         <div>
-          <h2>Contacts</h2>
+          <PagesH2>Here's your contact list:</PagesH2>
           <hr />
           <Filter />
           <hr />

@@ -1,13 +1,18 @@
-import { Field, Formik } from 'formik';
+import { Formik } from 'formik';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/operations';
-import { LoginFormBlock } from './LoginForm.styled';
+import {
+  LoginFormBlock,
+  LoginFormButton,
+  LoginFormField,
+} from './LoginForm.styled';
 
 export default function LoginForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (e, reset) => {
+    console.log('e');
     const login = {
       email: e.email,
       password: e.password,
@@ -26,18 +31,22 @@ export default function LoginForm() {
       >
         <LoginFormBlock>
           <label htmlFor="email">Email:</label>
-          <Field id="email" name="email" placeholder="jane@acme.com" />
+          <LoginFormField
+            id="email"
+            name="email"
+            placeholder="jane@smile.com"
+          />
           <br />
 
           <label htmlFor="password">Password:</label>
-          <Field
+          <LoginFormField
             id="password"
             name="password"
             placeholder="password"
             type="password"
           />
           <br />
-          <button type="submit">Submit</button>
+          <LoginFormButton type="submit">Submit</LoginFormButton>
         </LoginFormBlock>
       </Formik>
     </>

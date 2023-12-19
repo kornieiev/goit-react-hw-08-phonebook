@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Paragraph } from './Filter.styled';
-import { filterChange } from '../../redux/filterSlice';
+import { FilterDiv, FilterInput, Paragraph } from './Filter.styled';
+import { filterChange } from '../../redux/contacts/filterSlice';
 
 export default function Filter({ value }) {
   const dispatch = useDispatch();
@@ -11,9 +11,9 @@ export default function Filter({ value }) {
   };
 
   return (
-    <div>
-      <Paragraph>Find contacts by name</Paragraph>
-      <input
+    <FilterDiv>
+      <Paragraph>Find contacts by name:</Paragraph>
+      <FilterInput
         onChange={handleFilterChange}
         value={value}
         type="text"
@@ -22,6 +22,6 @@ export default function Filter({ value }) {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
-    </div>
+    </FilterDiv>
   );
 }

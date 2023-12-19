@@ -1,32 +1,43 @@
 import styled from 'styled-components';
 
-export const ListItemChanged = styled.div``;
+export const EditFormButtonsDiv = styled.div`
+  display: flex;
+  gap: 15px;
+`;
 
 export const SaveButton = styled.button`
-  background-color: white;
-  border: 1px solid grey;
-  border-radius: 3px;
-  margin-left: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: rgb(47, 47, 130);
+  color: white;
   &:hover {
-    background-color: #5d7fe3;
+    color: yellow;
   }
 `;
 
 export const CancelButton = styled.button`
-  background-color: white;
-  margin-right: 20px;
-  border: 1px solid grey;
-  border-radius: 3px;
-  margin-left: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: rgb(47, 47, 130);
+  color: white;
   &:hover {
-    background-color: #f0e96e;
+    color: yellow;
   }
 `;
 
 export const InputChange = styled.input`
-  margin-right: 10px;
+  width: 40%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px 10px;
 `;
 
 export const DivChangeWrap = styled.div`
   display: flex;
+`;
+
+export const EditFormForm = styled.form`
+  display: flex;
+  justify-content: space-around;
 `;

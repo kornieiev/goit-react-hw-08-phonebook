@@ -20,3 +20,8 @@ export const PagesBlock = styled.div`
   padding-right: 10px;
   padding-bottom: 30px;
 `;
+
+export const PagesH2 = styled.h2`
+  display: flex;
+  justify-content: center;
+`;

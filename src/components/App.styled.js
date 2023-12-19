@@ -8,4 +8,5 @@ export const MainWrap = styled.div`
   margin-bottom: 20px;
   background-image: url(${img});
   background-color: #9fdaef;
+  background-repeat: no-repeat;
 `;
