@@ -19,7 +19,6 @@ export default function Navigation() {
             <IoIosContacts />
           </NaviLogoAccent>
         </NaviLogoMain>
-        <br />
         {isLoggedIn && (
           <NaviLogoContacts to="/contacts">Contacts</NaviLogoContacts>
         )}

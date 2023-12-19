@@ -25,3 +25,13 @@ export const PagesH2 = styled.h2`
   display: flex;
   justify-content: center;
 `;
+
+export const PagesH1 = styled.h1`
+  font-size: 22px;
+  margin-left: 18px;
+
+  @media (max-width: 600px) {
+    font-size: 18px;
+    margin-left: 10px;
+  }
+`;

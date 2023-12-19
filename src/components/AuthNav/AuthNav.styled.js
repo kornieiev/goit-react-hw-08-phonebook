@@ -6,6 +6,9 @@ export const AuthNavWrap = styled.div`
   align-items: center;
   margin-left: auto;
   gap: 30px;
+  @media (max-width: 600px) {
+    gap: 10px;
+  }
 `;
 
 export const AuthNavLink = styled(NavLink)`

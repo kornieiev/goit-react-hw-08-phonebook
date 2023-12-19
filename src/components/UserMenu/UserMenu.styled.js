@@ -22,4 +22,11 @@ export const UserMenuLogOutButton = styled.button`
 export const UserMenuP = styled.p`
   font-size: 20px;
   font-weight: 400;
+  @media (max-width: 600px) {
+    font-size: 12px;
+    font-weight: 200;
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
 `;

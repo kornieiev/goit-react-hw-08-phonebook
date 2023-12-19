@@ -9,4 +9,7 @@ export const MainWrap = styled.div`
   background-image: url(${img});
   background-color: #9fdaef;
   background-repeat: no-repeat;
+  @media (max-width: 600px) {
+    width: 375px;
+  }
 `;

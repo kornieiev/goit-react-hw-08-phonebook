@@ -4,7 +4,10 @@ import { NavLink } from 'react-router-dom';
 export const Nav = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 30px;
+  @media (max-width: 600px) {
+    gap: 10px;
+  }
 `;
 export const NaviLogoContacts = styled(NavLink)`
   display: flex;
@@ -38,5 +41,11 @@ export const NaviLogoAccent = styled.span`
   transition: color 0.4s ease;
   &:hover {
     color: yellow;
+  }
+  @media (max-width: 600px) {
+    padding-left: 8px;
+    padding-right: 8px;
+    letter-spacing: 1px;
+    font-size: 20px;
   }
 `;
