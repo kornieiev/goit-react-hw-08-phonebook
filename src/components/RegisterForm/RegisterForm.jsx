@@ -1,4 +1,4 @@
-import { Field, Formik } from 'formik';
+import { Formik } from 'formik';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operations';
