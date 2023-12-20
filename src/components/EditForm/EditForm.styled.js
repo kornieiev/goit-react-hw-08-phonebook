@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-export const EditFormButtonsDiv = styled.div`
-  display: flex;
-  gap: 15px;
-`;
-
 export const SaveButton = styled.button`
   border: 1px solid white;
   border-radius: 5px;

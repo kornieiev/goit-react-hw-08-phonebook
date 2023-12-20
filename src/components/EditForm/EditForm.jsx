@@ -4,12 +4,10 @@ import {
   CancelButton,
   InputChange,
   DivChangeWrap,
-  EditFormButtonsDiv,
   EditFormForm,
 } from './EditForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { editContact, fetchContacts } from '../../redux/contacts/operations';
-import { useEffect } from 'react';
+import { editContact } from '../../redux/contacts/operations';
 import { selectContacts } from '../../redux/contacts/selectors';
 
 export default function EditForm(props) {
@@ -19,10 +17,6 @@ export default function EditForm(props) {
   const [editNumber, setEditNumber] = useState(props.item.number);
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
 
   const handleChange = e => {
     switch (e.target.name) {
@@ -63,7 +57,7 @@ export default function EditForm(props) {
   return (
     <div>
       <DivChangeWrap>
-        <EditFormForm>
+        <EditFormForm onSubmit={handleBtnSave}>
           <InputChange
             type="text"
             value={editName}
@@ -76,23 +70,17 @@ export default function EditForm(props) {
             name="number"
             onChange={handleChange}
           />
-        </EditFormForm>
-        <EditFormButtonsDiv>
-          <SaveButton
-            value={props.item.id}
-            type="button"
-            onClick={handleBtnSave}
-          >
+          <SaveButton value={props.item.id} type="submit">
             Save
           </SaveButton>
-          <CancelButton
-            value={props.item.id}
-            type="button"
-            onClick={handleBtnCancel}
-          >
-            Cancel
-          </CancelButton>
-        </EditFormButtonsDiv>
+        </EditFormForm>
+        <CancelButton
+          value={props.item.id}
+          type="button"
+          onClick={handleBtnCancel}
+        >
+          Cancel
+        </CancelButton>
       </DivChangeWrap>
     </div>
   );
